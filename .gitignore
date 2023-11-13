@@ -1,0 +1,4 @@
+Devops_POD.pem
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
