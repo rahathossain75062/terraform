@@ -18,6 +18,8 @@ resource "aws_instance" "example" {
                sudo apt install nginx -y
                EOF
 
+  key_name = "server-key"
+
   tags = {
     Name = "Devops-Class"  # Specify the desired name for your instance
   }
