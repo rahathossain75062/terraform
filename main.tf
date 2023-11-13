@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"  # Specify the AMI ID for your desired operating system
+  ami           = "ami-06aa3f7caf3a30282"  # Specify the AMI ID for your desired operating system
   instance_type = "t2.micro"                 # Specify the instance type
 
   user_data = <<-EOF
