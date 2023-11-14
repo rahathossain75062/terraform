@@ -27,6 +27,13 @@ resource "aws_security_group" "pod_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+    from_port   = 30334
+    to_port     = 30334
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   }
   # Add more ingress rules
 
