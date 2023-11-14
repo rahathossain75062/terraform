@@ -27,7 +27,7 @@ resource "aws_security_group" "pod_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+  }
   # Add more ingress rules
 
 resource "aws_instance" "example" {
