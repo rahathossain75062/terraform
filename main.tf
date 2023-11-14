@@ -2,6 +2,34 @@ provider "aws" {
   region = "us-east-1"  # Specify your desired AWS region
 }
 
+# Create a security group
+resource "aws_security_group" "pod_sg" {
+  name        = "pod_sg"
+  description = "Terraform"
+  
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Add more ingress rules
+
 resource "aws_instance" "example" {
   ami           = "ami-06aa3f7caf3a30282"  # Specify the AMI ID for your desired operating system
   instance_type = "t2.medium"                 # Specify the instance type
